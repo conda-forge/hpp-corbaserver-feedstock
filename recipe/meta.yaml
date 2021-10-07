@@ -1,5 +1,5 @@
 {% set name = "hpp-corbaserver" %}
-{% set version = "4.10.1" %}
+{% set version = "4.12.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6e3ab1ee5311ef48f180fd6e2a52d99a746154671cb3cfe458abf08a08f418c
+  sha256: c8483108d7e1a87a93ab5cda5202d6edf0be3c29b4c7c0f760401d50d45c3fc0
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
@@ -58,7 +58,7 @@ about:
   home: https://github.com/humanoid-path-planner/{{ name }}
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: '{{ name }} subpackage of Humanoid Path Planner suite'
+  summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
     path planning functionalities for a humanoid robot. The core functionalities are well

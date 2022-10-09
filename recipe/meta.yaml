@@ -1,5 +1,5 @@
 {% set name = "hpp-corbaserver" %}
-{% set version = "4.10.1" %}
+{% set version = "4.13.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6e3ab1ee5311ef48f180fd6e2a52d99a746154671cb3cfe458abf08a08f418c
+  sha256: bef1336374438ec24475054a5ee184d286be239b59ed6cb90099d0c2cc1322e6
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
@@ -22,17 +22,21 @@ requirements:
     - make
     - pkg-config
     - doxygen
+    - python                                 # [build_platform != target_platform]
+    - pinocchio                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - boost
     - boost-cpp
     - tinyxml
-    - hpp-fcl
-    - hpp-util
-    - hpp-statistics
-    - hpp-pinocchio
-    - hpp-constraints
-    - hpp-core
-    - hpp-template-corba
+    - pinocchio
+    - hpp-fcl  1.8.1
+    - hpp-util  {{ version }}
+    - hpp-statistics  {{ version }}
+    - hpp-pinocchio  {{ version }}
+    - hpp-constraints  {{ version }}
+    - hpp-core  {{ version }}
+    - hpp-template-corba  {{ version }}
     - omniorb
     - omniorbpy
     - python
@@ -58,7 +62,7 @@ about:
   home: https://github.com/humanoid-path-planner/{{ name }}
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: '{{ name }} subpackage of Humanoid Path Planner suite'
+  summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
     path planning functionalities for a humanoid robot. The core functionalities are well

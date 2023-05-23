@@ -1,11 +1,11 @@
-About hpp-corbaserver
-=====================
+About hpp-corbaserver-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hpp-corbaserver-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/humanoid-path-planner/hpp-corbaserver
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hpp-corbaserver-feedstock/blob/main/LICENSE.txt)
 
 Summary: hpp-corbaserver subpackage of Humanoid Path Planner suite
 

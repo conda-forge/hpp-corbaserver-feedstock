@@ -31,6 +31,8 @@ requirements:
     - tinyxml
     - pinocchio
     - hpp-fcl
+    - qhull
+    - qhull-static
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
     - hpp-pinocchio  {{ version }}
@@ -42,6 +44,8 @@ requirements:
     - python
   run:
     - tinyxml
+    - qhull
+    - qhull-static
     - omniorb
     - omniorbpy
     - python

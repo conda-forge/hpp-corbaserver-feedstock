@@ -1,5 +1,5 @@
 {% set name = "hpp-corbaserver" %}
-{% set version = "5.0.0" %}
+{% set version = "5.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 68002bc0e16e965b2df770f5746f41a89c708eb8ecf287d289d845359a575ff5
+  sha256: 9f1ca3cd0b4f0c806faa34b591f7e7cbc1151e692a7f66cdf6b6a994a55d4cc6
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -31,6 +31,8 @@ requirements:
     - tinyxml
     - pinocchio
     - hpp-fcl
+    - qhull
+    - qhull-static
     - hpp-util  {{ version }}
     - hpp-statistics  {{ version }}
     - hpp-pinocchio  {{ version }}
@@ -42,6 +44,8 @@ requirements:
     - python
   run:
     - tinyxml
+    - qhull
+    - qhull-static
     - omniorb
     - omniorbpy
     - python
@@ -57,8 +61,8 @@ test:
 
 about:
   home: https://github.com/humanoid-path-planner/{{ name }}
-  license: LGPL-3.0-or-later
-  license_file: COPYING
+  license: BSD-2-Clause
+  license_file: LICENSE
   summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing

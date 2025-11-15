@@ -1,5 +1,5 @@
 {% set name = "hpp-corbaserver" %}
-{% set version = "6.0.0" %}
+{% set version = "6.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 995ed06a55d8583f93c9616942e51eb5d3af7c472488030d442b338cf68e94af
+  sha256: e92102f9c26ab784b9d521024041581a363fdcc24ce1e2b81e7ffb3612cab6bc
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or python_impl == 'pypy']
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -41,6 +41,7 @@ requirements:
     - hpp-template-corba  {{ version }}
     - omniorb
     - omniorbpy
+    - proxsuite
     - python
   run:
     - tinyxml
@@ -48,6 +49,7 @@ requirements:
     - qhull-static
     - omniorb
     - omniorbpy
+    - proxsuite
     - python
 
 test:

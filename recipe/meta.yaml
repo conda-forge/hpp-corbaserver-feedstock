@@ -41,6 +41,7 @@ requirements:
     - hpp-template-corba  {{ version }}
     - omniorb
     - omniorbpy
+    - proxsuite
     - python
   run:
     - tinyxml
@@ -48,6 +49,7 @@ requirements:
     - qhull-static
     - omniorb
     - omniorbpy
+    - proxsuite
     - python
 
 test:

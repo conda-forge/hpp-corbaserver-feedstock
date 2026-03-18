@@ -10,7 +10,7 @@ source:
   sha256: 819c6b6437f198d10f8c9a45293063676872116cae5d6cc7460811053a9432b0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or python_impl == 'pypy']
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -28,7 +28,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - libboost-devel
-    - tinyxml
+    - tinyxml2
     - pinocchio
     - hpp-fcl
     - qhull
@@ -44,7 +44,7 @@ requirements:
     - proxsuite
     - python
   run:
-    - tinyxml
+    - tinyxml2
     - qhull
     - qhull-static
     - omniorb
